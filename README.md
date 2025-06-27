@@ -1,3 +1,25 @@
+## About This Project
+
+**Movie Recommender** is a lightweight, PHP‑and‑MySQL–powered web application designed to help users discover films through intuitive browsing, and user feedback:
+
+- **User Experience**  
+  - Browse movies by genre, release year and rating  
+  - Search by title or keyword  
+  - View detailed pages with synopsis, cast and user reviews  
+
+- **Admin Panel**  
+  - Add, edit, or remove movie entries (title, genre, year, poster, trailer link)  
+  - Moderate user reviews and ratings  
+  - Dashboard shows total movies, active users, and recent reviews
+
+- **Tech Stack**  
+  - **Frontend:** HTML5, CSS3 (Bootstrap), JavaScript (jQuery)  
+  - **Backend:** PHP 7.x with PDO for secure database access  
+  - **Database:** MySQL 5.x with `utf8mb4` support  
+
+By combining straightforward business rules with a clean, responsive UI, this project demonstrates how to build a fully featured movie catalog and recommendation site without the overhead of a machine‑learning pipeline.  
+
+
 ## Local Setup
 
 Follow these steps to run the Movie Recommender on your local machine:
