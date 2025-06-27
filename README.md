@@ -1,33 +1,62 @@
-Step-by-Step Guide to Run the Project Locally
-1. Start XAMPP
-Launch the XAMPP control panel.
-Start Apache and MySQL services.
-2. Create Database
-Open phpMyAdmin via http://localhost/phpmyadmin.
-Create a new database named msrps_db (Collation: utf8mb4_general_ci).
-3. Import Database
-Navigate to the Import tab in phpMyAdmin.
-Upload the mrsps_db.sql file located in ./Project/Database.
-Click Go to import tables.
-4. Set Up Project Folder
-Copy the entire project folder (e.g., MovieRecommender) into the htdocs directory
-(usually C:\xampp\htdocs).
-5. Configure Base URL
-Open initialize.php in a code editor.Locate the base_url variable.
-Replace it with your local server path, e.g.:
-$base_url = 'http://localhost:8080/MovieRecommender/';
-(Adjust port 8080 or folder name as needed)
-6. Run the Project
-Open your browser and navigate to:
-http://localhost:8080/MovieRecommender
-The Movie Recommender homepage should load.
-Troubleshooting Tips
-🔧 Database Connection Failed?
-Ensure MySQL is running in XAMPP.
-Verify database credentials in config.php.
-🔧 404 Errors?
-Double-check the base_url in initialize.php.
-Confirm the project folder is in htdocs.
-🔧 SQL Import Issues?
-Ensure the .sql file is not corrupted.
-Check for PHP version compatibility.
+## Local Setup
+
+Follow these steps to run the Movie Recommender on your local machine:
+
+1. **Start Your Web & DB Servers**  
+   - Open the **XAMPP Control Panel**.  
+   - Click **Start** next to **Apache** and **MySQL**.
+
+2. **Create the Database**  
+   - In your browser, go to `http://localhost/phpmyadmin`.  
+   - Click **New**.  
+   - Enter **Database name:** `msrps_db`  
+   - Select **Collation:** `utf8mb4_general_ci`  
+   - Click **Create**.
+
+3. **Import Schema & Seed Data**  
+   - In phpMyAdmin, select the `msrps_db` database.  
+   - Go to the **Import** tab.  
+   - Click **Choose File** and select `./Project/Database/mrsps_db.sql`.  
+   - Click **Go** and wait for the confirmation message.
+
+4. **Deploy Project Files**  
+   - Copy the entire project folder (e.g. `MovieRecommender`) into your XAMPP **htdocs** directory:  
+     ```
+     C:\xampp\htdocs\MovieRecommender
+     ```
+   - Ensure folder permissions allow read/write where needed.
+
+5. **Configure Application Base URL**  
+   - Open `initialize.php` in your editor.  
+   - Locate the `$base_url` variable, for example:
+     ```php
+     // initialize.php
+     $base_url = 'http://localhost:8080/MovieRecommender/';
+     ```
+   - Update the URL (and port) to match your local setup.
+
+6. **Launch the App**  
+   - In your browser, navigate to:  
+     ```
+     http://localhost:8080/MovieRecommender/
+     ```
+   - The **Movie Recommender** homepage should load.
+
+---
+
+### Troubleshooting
+
+- **Database Connection Failed?**  
+  - Verify **MySQL** is running in XAMPP.  
+  - Double‑check credentials in `config.php`.
+
+- **404 or Asset Loading Errors?**  
+  - Make sure your project folder name matches the one in `$base_url`.  
+  - Confirm files are under `htdocs/MovieRecommender`.
+
+- **SQL Import Issues?**  
+  - Open the `.sql` file in a text editor to check for corruption.  
+  - Ensure your MySQL version is compatible with the dump.
+
+- **Port Conflicts**  
+  - If Apache won’t start on port **80** or **8080**, edit `httpd.conf` (search for `Listen 80`) or configure XAMPP to use a free port.
